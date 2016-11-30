@@ -54,6 +54,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jButton2.setText("CERRAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setText("Segundo Plano");
 
@@ -150,9 +155,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String asunto = JOptionPane.showInputDialog("ASUNTO: ");
-        String fecha = JOptionPane.showInputDialog("FECHA: ");
-        String hora = JOptionPane.showInputDialog("HORA: ");
+        String fecha = JOptionPane.showInputDialog(null,"FECHA: ","dd/mm/aaaa");
+        String hora = JOptionPane.showInputDialog("HORA (formato 24hrs): ");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea salir?", "SALIR", JOptionPane.YES_NO_OPTION);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
